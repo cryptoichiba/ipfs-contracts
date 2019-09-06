@@ -6,6 +6,7 @@
     "compile": "node_modules/.bin/truffle compile",
     "migrate:dev": "node_modules/.bin/truffle migrate --reset --network development",
     "migrate:stg": "node_modules/.bin/truffle migrate --reset --network staging",
+    "migrate:ropsten": "node_modules/.bin/truffle migrate --reset --network ropsten",
     "ganache-cli:start": "node_modules/.bin/ganache-cli > ./log/ganache-output-`date +%Y%m%d%H%M%S`.log &",
     "ganache-cli:stop": "ps ax | grep ganache-cli | head -n 1 | awk '{print $1}' | xargs kill",
     "console": "node_modules/.bin/truffle console",
