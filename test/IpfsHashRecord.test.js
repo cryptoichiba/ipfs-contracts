@@ -23,19 +23,6 @@ contract("IpfsHashRecord test", async accounts => {
     await assertRevert(instance.writeHash(EVENT_ID, IPFS_HASH, {from: accounts[1]}))
   });
 
-  it("should store hash admin", async () => {
-    const instance = await IpfsHashRecord.deployed();
-    await instance.storeHash(EVENT_ID, IPFS_HASH, {from: accounts[0]});
-    const { eventID, ipfsHash } = await instance.records.call(0);
-    assert.equal(eventID.substr(0,10), EVENT_ID);
-    assert.equal(ipfsHash, IPFS_HASH);
-  });
-
-  it("should not store hash no admin", async () => {
-    const instance = await IpfsHashRecord.deployed();
-    await assertRevert(instance.storeHash(EVENT_ID, IPFS_HASH, {from: accounts[1]}))
-  });
-
   it("should add admin", async () => {
     const instance = await IpfsHashRecord.deployed();
     await instance.addWhitelistAdmin(accounts[1], {from: accounts[0]});
