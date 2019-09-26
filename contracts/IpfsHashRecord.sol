@@ -41,33 +41,4 @@ contract IpfsHashRecord is WhitelistAdminRole {
   function isWhitelistAdmin(address account) public view returns (bool) {
     return super.isWhitelistAdmin(account);
   }
-
-  /* Following code is not use as plan, but use if necesary */
-
-  // Packing for gas efficiency
-  // Note: Don't use as default, use if necessary
-  struct IpfsHas {
-    uint256 createdAt;
-    bytes32 ipfsHash;
-    bytes4 eventID;
-  }
-
-  // Note: Don't use as default, use if necessary
-  IpfsHas[] public records;
-
-  /**
-   * @dev Store ipfsHash to array
-   * Note: Don't use as default, use if necessary
-   */
-  function storeHash(bytes4 _eventID, bytes32 _ipfsHash) public onlyWhitelistAdmin {
-    uint256 createdAt = uint256(now);
-
-    records.push(IpfsHas({
-      createdAt: createdAt,
-      ipfsHash: _ipfsHash,
-      eventID: _eventID
-    }));
-
-    emit Recorded(_eventID, createdAt, _ipfsHash);
-  }
 }
