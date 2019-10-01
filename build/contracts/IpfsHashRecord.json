@@ -6,7 +6,7 @@
       "inputs": [
         {
           "indexed": true,
-          "name": "eventID",
+          "name": "eventSig",
           "type": "bytes4"
         },
         {
@@ -51,7 +51,7 @@
       "constant": false,
       "inputs": [
         {
-          "name": "_eventID",
+          "name": "_eventSig",
           "type": "bytes4"
         },
         {
@@ -108,12 +108,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.1+commit.c8a2cb62\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_eventID\",\"type\":\"bytes4\"},{\"name\":\"_ipfsHash\",\"type\":\"bytes32\"}],\"name\":\"writeHash\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceWhitelistAdmin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addWhitelistAdmin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isWhitelistAdmin\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"eventID\",\"type\":\"bytes4\"},{\"indexed\":true,\"name\":\"createdAt\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"ipfsHash\",\"type\":\"bytes32\"}],\"name\":\"Recorded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"WhitelistAdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"WhitelistAdminRemoved\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"Record IPFS hash to Ethereum contract by emitting log.\",\"methods\":{\"addWhitelistAdmin(address)\":{\"details\":\"Add admin\"},\"isWhitelistAdmin(address)\":{\"details\":\"Check whether address is admin or not\"},\"renounceWhitelistAdmin()\":{\"details\":\"Renounce admin\"},\"writeHash(bytes4,bytes32)\":{\"details\":\"Write ipfsHash as log\"}},\"title\":\"IpfsHashRecord\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol\":\"IpfsHashRecord\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol\":{\"keccak256\":\"0xfd3a58b927766e8122530831467d32f02fe841424e4e81eb9cab17fdb43fe81f\",\"urls\":[\"bzzr://afb43d28dcd4c5f44a769c995257b7f5840443077497e4079bbe1574b3e6b61a\"]},\"openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzzr://bd34c1ce05b5b2b3a62fc02e160f6805b1cadd476854664f433c685b2fda8dad\"]},\"openzeppelin-solidity/contracts/access/roles/WhitelistAdminRole.sol\":{\"keccak256\":\"0xd2c87384e7346f702df3be70e99fff30f22f7b9767a9502afb345f0457ddf36f\",\"urls\":[\"bzzr://3f300be02f06cae39a29cdf6d4f1d6b3faedf818c83c5623a512e189bdad690a\"]}},\"version\":1}",
-  "bytecode": "0x608060405261001c33610021640100000000026401000000009004565b610297565b61004281600061008864010000000002610710179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b6100a18282610174640100000000026401000000009004565b151515610116576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610240576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f526f6c65733a206163636f756e7420697320746865207a65726f20616464726581526020017f737300000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b610819806102a66000396000f3fe60806040526004361061005c576000357c01000000000000000000000000000000000000000000000000000000009004806308ff5000146100615780634c5a628c146100c55780637362d9c8146100dc578063bb5f747b1461012d575b600080fd5b34801561006d57600080fd5b506100c36004803603604081101561008457600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916906020019092919080359060200190929190505050610196565b005b3480156100d157600080fd5b506100da610295565b005b3480156100e857600080fd5b5061012b600480360360208110156100ff57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061029f565b005b34801561013957600080fd5b5061017c6004803603602081101561015057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061034e565b604051808215151515815260200191505060405180910390f35b61019f3361034e565b1515610239576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b42827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167fcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c836040518082815260200191505060405180910390a35050565b61029d610360565b565b6102a83361034e565b1515610342576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61034b8161036b565b50565b60006103598261041a565b9050919050565b61036933610437565b565b6103743361034e565b151561040e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61041781610491565b50565b60006104308260006104eb90919063ffffffff16565b9050919050565b61044b81600061060e90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e16560405160405180910390a250565b6104a581600061071090919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156105b7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f526f6c65733a206163636f756e7420697320746865207a65726f20616464726581526020017f737300000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61061882826104eb565b15156106b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c81526020017f650000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b61071a82826104eb565b15151561078f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fea165627a7a723058202474da7b2bea64b903b80947244cabdafb9d598197cbe0e9b8ebafb939c65a520029",
-  "deployedBytecode": "0x60806040526004361061005c576000357c01000000000000000000000000000000000000000000000000000000009004806308ff5000146100615780634c5a628c146100c55780637362d9c8146100dc578063bb5f747b1461012d575b600080fd5b34801561006d57600080fd5b506100c36004803603604081101561008457600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916906020019092919080359060200190929190505050610196565b005b3480156100d157600080fd5b506100da610295565b005b3480156100e857600080fd5b5061012b600480360360208110156100ff57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061029f565b005b34801561013957600080fd5b5061017c6004803603602081101561015057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061034e565b604051808215151515815260200191505060405180910390f35b61019f3361034e565b1515610239576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b42827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167fcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c836040518082815260200191505060405180910390a35050565b61029d610360565b565b6102a83361034e565b1515610342576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61034b8161036b565b50565b60006103598261041a565b9050919050565b61036933610437565b565b6103743361034e565b151561040e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61041781610491565b50565b60006104308260006104eb90919063ffffffff16565b9050919050565b61044b81600061060e90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e16560405160405180910390a250565b6104a581600061071090919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156105b7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f526f6c65733a206163636f756e7420697320746865207a65726f20616464726581526020017f737300000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61061882826104eb565b15156106b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c81526020017f650000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b61071a82826104eb565b15151561078f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fea165627a7a723058202474da7b2bea64b903b80947244cabdafb9d598197cbe0e9b8ebafb939c65a520029",
-  "sourceMap": "199:942:0:-;;;433:30:3;452:10;433:18;;;:30;;;:::i;:::-;199:942:0;;991:143:3;1055:29;1076:7;1055:16;:20;;;;;;:29;;;;;:::i;:::-;1119:7;1099:28;;;;;;;;;;;;991:143;:::o;260:175:2:-;337:18;341:4;347:7;337:3;;;:18;;;:::i;:::-;336:19;328:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;424:4;401;:11;;:20;413:7;401:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;260:175;;:::o;779:200::-;851:4;894:1;875:21;;:7;:21;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:4;:11;;:20;964:7;952:20;;;;;;;;;;;;;;;;;;;;;;;;;945:27;;779:200;;;;:::o;199:942:0:-;;;;;;;",
-  "deployedSourceMap": "199:942:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:140;;8:9:-1;5:2;;;30:1;27;20:12;5:2;544:140:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;544:140:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;874:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;874:82:0;;;:::i;:::-;;720:113;;8:9:-1;5:2;;;30:1;27;20:12;5:2;720:113:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;720:113:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1020:119;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1020:119:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1020:119:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;544:140;524:28:3;541:10;524:16;:28::i;:::-;516:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;663:3:0;645:8;636:43;;;;669:9;636:43;;;;;;;;;;;;;;;;;;544:140;;:::o;874:82::-;921:30;:28;:30::i;:::-;874:82::o;720:113::-;524:28:3;541:10;524:16;:28::i;:::-;516:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;796:32:0;820:7;796:23;:32::i;:::-;720:113;:::o;1020:119::-;1084:4;1103:31;1126:7;1103:22;:31::i;:::-;1096:38;;1020:119;;;:::o;894:91:3:-;945:33;967:10;945:21;:33::i;:::-;894:91::o;774:114::-;524:28;541:10;524:16;:28::i;:::-;516:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;854:27;873:7;854:18;:27::i;:::-;774:114;:::o;645:123::-;709:4;732:29;753:7;732:16;:20;;:29;;;;:::i;:::-;725:36;;645:123;;;:::o;1140:151::-;1207:32;1231:7;1207:16;:23;;:32;;;;:::i;:::-;1276:7;1254:30;;;;;;;;;;;;1140:151;:::o;991:143::-;1055:29;1076:7;1055:16;:20;;:29;;;;:::i;:::-;1119:7;1099:28;;;;;;;;;;;;991:143;:::o;779:200:2:-;851:4;894:1;875:21;;:7;:21;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:4;:11;;:20;964:7;952:20;;;;;;;;;;;;;;;;;;;;;;;;;945:27;;779:200;;;;:::o;510:180::-;589:18;593:4;599:7;589:3;:18::i;:::-;581:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;678:5;655:4;:11;;:20;667:7;655:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;510:180;;:::o;260:175::-;337:18;341:4;347:7;337:3;:18::i;:::-;336:19;328:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;424:4;401;:11;;:20;413:7;401:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;260:175;;:::o",
-  "source": "pragma solidity 0.5.1;\n\nimport 'openzeppelin-solidity/contracts/access/roles/WhitelistAdminRole.sol';\n\n/**\n * @title IpfsHashRecord\n * @dev Record IPFS hash to Ethereum contract by emitting log.\n */\ncontract IpfsHashRecord is WhitelistAdminRole {\n\n  // eventID is the first 4 bytes of the Keccak hash of events\n  // auction_bidding: 0x636fe49e\n  // auction_receipt: 0x4997644b\n  // bancor_trading: 0x285a30e1\n  event Recorded (bytes4 indexed eventID, uint256 indexed createdAt, bytes32 ipfsHash);\n\n  /**\n   * @dev Write ipfsHash as log\n   */\n  function writeHash(bytes4 _eventID, bytes32 _ipfsHash) public onlyWhitelistAdmin {\n    emit Recorded(_eventID, uint256(now), _ipfsHash);\n  }\n\n  /**\n   * @dev Add admin\n   */\n  function addWhitelistAdmin(address account) public onlyWhitelistAdmin {\n    super.addWhitelistAdmin(account);\n  }\n\n  /**\n   * @dev Renounce admin\n   */\n  function renounceWhitelistAdmin() public {\n    super.renounceWhitelistAdmin();\n  }\n\n  /**\n   * @dev Check whether address is admin or not\n   */\n  function isWhitelistAdmin(address account) public view returns (bool) {\n    return super.isWhitelistAdmin(account);\n  }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.1+commit.c8a2cb62\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_eventSig\",\"type\":\"bytes4\"},{\"name\":\"_ipfsHash\",\"type\":\"bytes32\"}],\"name\":\"writeHash\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceWhitelistAdmin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addWhitelistAdmin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isWhitelistAdmin\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"eventSig\",\"type\":\"bytes4\"},{\"indexed\":true,\"name\":\"createdAt\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"ipfsHash\",\"type\":\"bytes32\"}],\"name\":\"Recorded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"WhitelistAdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"WhitelistAdminRemoved\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"Record IPFS hash to Ethereum contract by emitting log.\",\"methods\":{\"addWhitelistAdmin(address)\":{\"details\":\"Add admin\"},\"isWhitelistAdmin(address)\":{\"details\":\"Check whether address is admin or not\"},\"renounceWhitelistAdmin()\":{\"details\":\"Renounce admin\"},\"writeHash(bytes4,bytes32)\":{\"details\":\"Write ipfsHash as log\"}},\"title\":\"IpfsHashRecord\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol\":\"IpfsHashRecord\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol\":{\"keccak256\":\"0x6fde2efeba6623483c1e4cb04a22cf858341404e7dc7db95e56d07546a454016\",\"urls\":[\"bzzr://193e3862a2c74e99bddf144d104d3a1cb5df5c0996623a1aa44e7cb46e66f8f8\"]},\"openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzzr://bd34c1ce05b5b2b3a62fc02e160f6805b1cadd476854664f433c685b2fda8dad\"]},\"openzeppelin-solidity/contracts/access/roles/WhitelistAdminRole.sol\":{\"keccak256\":\"0xd2c87384e7346f702df3be70e99fff30f22f7b9767a9502afb345f0457ddf36f\",\"urls\":[\"bzzr://3f300be02f06cae39a29cdf6d4f1d6b3faedf818c83c5623a512e189bdad690a\"]}},\"version\":1}",
+  "bytecode": "0x608060405261001c33610021640100000000026401000000009004565b610297565b61004281600061008864010000000002610710179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b6100a18282610174640100000000026401000000009004565b151515610116576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614151515610240576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f526f6c65733a206163636f756e7420697320746865207a65726f20616464726581526020017f737300000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b610819806102a66000396000f3fe60806040526004361061005c576000357c01000000000000000000000000000000000000000000000000000000009004806308ff5000146100615780634c5a628c146100c55780637362d9c8146100dc578063bb5f747b1461012d575b600080fd5b34801561006d57600080fd5b506100c36004803603604081101561008457600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916906020019092919080359060200190929190505050610196565b005b3480156100d157600080fd5b506100da610295565b005b3480156100e857600080fd5b5061012b600480360360208110156100ff57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061029f565b005b34801561013957600080fd5b5061017c6004803603602081101561015057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061034e565b604051808215151515815260200191505060405180910390f35b61019f3361034e565b1515610239576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b42827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167fcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c836040518082815260200191505060405180910390a35050565b61029d610360565b565b6102a83361034e565b1515610342576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61034b8161036b565b50565b60006103598261041a565b9050919050565b61036933610437565b565b6103743361034e565b151561040e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61041781610491565b50565b60006104308260006104eb90919063ffffffff16565b9050919050565b61044b81600061060e90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e16560405160405180910390a250565b6104a581600061071090919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156105b7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f526f6c65733a206163636f756e7420697320746865207a65726f20616464726581526020017f737300000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61061882826104eb565b15156106b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c81526020017f650000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b61071a82826104eb565b15151561078f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fea165627a7a72305820dc702c7b006a2d51412b147f29ebcd018bac8478f7850530552964b073f9b95e0029",
+  "deployedBytecode": "0x60806040526004361061005c576000357c01000000000000000000000000000000000000000000000000000000009004806308ff5000146100615780634c5a628c146100c55780637362d9c8146100dc578063bb5f747b1461012d575b600080fd5b34801561006d57600080fd5b506100c36004803603604081101561008457600080fd5b8101908080357bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916906020019092919080359060200190929190505050610196565b005b3480156100d157600080fd5b506100da610295565b005b3480156100e857600080fd5b5061012b600480360360208110156100ff57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061029f565b005b34801561013957600080fd5b5061017c6004803603602081101561015057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061034e565b604051808215151515815260200191505060405180910390f35b61019f3361034e565b1515610239576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b42827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167fcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c836040518082815260200191505060405180910390a35050565b61029d610360565b565b6102a83361034e565b1515610342576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61034b8161036b565b50565b60006103598261041a565b9050919050565b61036933610437565b565b6103743361034e565b151561040e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260408152602001807f57686974656c69737441646d696e526f6c653a2063616c6c657220646f65732081526020017f6e6f742068617665207468652057686974656c69737441646d696e20726f6c6581525060400191505060405180910390fd5b61041781610491565b50565b60006104308260006104eb90919063ffffffff16565b9050919050565b61044b81600061060e90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e16560405160405180910390a250565b6104a581600061071090919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156105b7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f526f6c65733a206163636f756e7420697320746865207a65726f20616464726581526020017f737300000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61061882826104eb565b15156106b2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001807f526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c81526020017f650000000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b61071a82826104eb565b15151561078f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fea165627a7a72305820dc702c7b006a2d51412b147f29ebcd018bac8478f7850530552964b073f9b95e0029",
+  "sourceMap": "199:953:0:-;;;433:30:3;452:10;433:18;;;:30;;;:::i;:::-;199:953:0;;991:143:3;1055:29;1076:7;1055:16;:20;;;;;;:29;;;;;:::i;:::-;1119:7;1099:28;;;;;;;;;;;;991:143;:::o;260:175:2:-;337:18;341:4;347:7;337:3;;;:18;;;:::i;:::-;336:19;328:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;424:4;401;:11;;:20;413:7;401:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;260:175;;:::o;779:200::-;851:4;894:1;875:21;;:7;:21;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:4;:11;;:20;964:7;952:20;;;;;;;;;;;;;;;;;;;;;;;;;945:27;;779:200;;;;:::o;199:953:0:-;;;;;;;",
+  "deployedSourceMap": "199:953:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;553:142;;8:9:-1;5:2;;;30:1;27;20:12;5:2;553:142:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;553:142:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;885:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;885:82:0;;;:::i;:::-;;731:113;;8:9:-1;5:2;;;30:1;27;20:12;5:2;731:113:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;731:113:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1031:119;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1031:119:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1031:119:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;553:142;524:28:3;541:10;524:16;:28::i;:::-;516:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;674:3:0;655:9;646:44;;;;680:9;646:44;;;;;;;;;;;;;;;;;;553:142;;:::o;885:82::-;932:30;:28;:30::i;:::-;885:82::o;731:113::-;524:28:3;541:10;524:16;:28::i;:::-;516:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;807:32:0;831:7;807:23;:32::i;:::-;731:113;:::o;1031:119::-;1095:4;1114:31;1137:7;1114:22;:31::i;:::-;1107:38;;1031:119;;;:::o;894:91:3:-;945:33;967:10;945:21;:33::i;:::-;894:91::o;774:114::-;524:28;541:10;524:16;:28::i;:::-;516:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;854:27;873:7;854:18;:27::i;:::-;774:114;:::o;645:123::-;709:4;732:29;753:7;732:16;:20;;:29;;;;:::i;:::-;725:36;;645:123;;;:::o;1140:151::-;1207:32;1231:7;1207:16;:23;;:32;;;;:::i;:::-;1276:7;1254:30;;;;;;;;;;;;1140:151;:::o;991:143::-;1055:29;1076:7;1055:16;:20;;:29;;;;:::i;:::-;1119:7;1099:28;;;;;;;;;;;;991:143;:::o;779:200:2:-;851:4;894:1;875:21;;:7;:21;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:4;:11;;:20;964:7;952:20;;;;;;;;;;;;;;;;;;;;;;;;;945:27;;779:200;;;;:::o;510:180::-;589:18;593:4;599:7;589:3;:18::i;:::-;581:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;678:5;655:4;:11;;:20;667:7;655:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;510:180;;:::o;260:175::-;337:18;341:4;347:7;337:3;:18::i;:::-;336:19;328:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;424:4;401;:11;;:20;413:7;401:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;260:175;;:::o",
+  "source": "pragma solidity 0.5.1;\n\nimport 'openzeppelin-solidity/contracts/access/roles/WhitelistAdminRole.sol';\n\n/**\n * @title IpfsHashRecord\n * @dev Record IPFS hash to Ethereum contract by emitting log.\n */\ncontract IpfsHashRecord is WhitelistAdminRole {\n\n  // eventSig is the first 4 bytes of the Keccak256 hash of event name\n  // auction_bidding: 0x636fe49e\n  // auction_receipt: 0x4997644b\n  // bancor_trading: 0x285a30e1\n  event Recorded (bytes4 indexed eventSig, uint256 indexed createdAt, bytes32 ipfsHash);\n\n  /**\n   * @dev Write ipfsHash as log\n   */\n  function writeHash(bytes4 _eventSig, bytes32 _ipfsHash) public onlyWhitelistAdmin {\n    emit Recorded(_eventSig, uint256(now), _ipfsHash);\n  }\n\n  /**\n   * @dev Add admin\n   */\n  function addWhitelistAdmin(address account) public onlyWhitelistAdmin {\n    super.addWhitelistAdmin(account);\n  }\n\n  /**\n   * @dev Renounce admin\n   */\n  function renounceWhitelistAdmin() public {\n    super.renounceWhitelistAdmin();\n  }\n\n  /**\n   * @dev Check whether address is admin or not\n   */\n  function isWhitelistAdmin(address account) public view returns (bool) {\n    return super.isWhitelistAdmin(account);\n  }\n}\n",
   "sourcePath": "/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol",
   "ast": {
     "absolutePath": "/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol",
@@ -195,10 +195,10 @@
                   "constant": false,
                   "id": 6,
                   "indexed": true,
-                  "name": "eventID",
+                  "name": "eventSig",
                   "nodeType": "VariableDeclaration",
                   "scope": 12,
-                  "src": "427:22:0",
+                  "src": "435:23:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -209,7 +209,7 @@
                     "id": 5,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "427:6:0",
+                    "src": "435:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -225,7 +225,7 @@
                   "name": "createdAt",
                   "nodeType": "VariableDeclaration",
                   "scope": 12,
-                  "src": "451:25:0",
+                  "src": "460:25:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -236,7 +236,7 @@
                     "id": 7,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "451:7:0",
+                    "src": "460:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -252,7 +252,7 @@
                   "name": "ipfsHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 12,
-                  "src": "478:16:0",
+                  "src": "487:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -263,7 +263,7 @@
                     "id": 9,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "478:7:0",
+                    "src": "487:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -273,15 +273,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "426:69:0"
+              "src": "434:70:0"
             },
-            "src": "411:85:0"
+            "src": "419:86:0"
           },
           {
             "body": {
               "id": 29,
               "nodeType": "Block",
-              "src": "625:59:0",
+              "src": "635:60:0",
               "statements": [
                 {
                   "eventCall": {
@@ -290,11 +290,11 @@
                       {
                         "argumentTypes": null,
                         "id": 22,
-                        "name": "_eventID",
+                        "name": "_eventSig",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 14,
-                        "src": "645:8:0",
+                        "src": "655:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
                           "typeString": "bytes4"
@@ -310,7 +310,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 326,
-                            "src": "663:3:0",
+                            "src": "674:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -330,7 +330,7 @@
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "655:7:0",
+                          "src": "666:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint256_$",
                             "typeString": "type(uint256)"
@@ -345,7 +345,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "655:12:0",
+                        "src": "666:12:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -358,7 +358,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 16,
-                        "src": "669:9:0",
+                        "src": "680:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -385,7 +385,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "636:8:0",
+                      "src": "646:8:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bytes4_$_t_uint256_$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes4,uint256,bytes32)"
@@ -399,7 +399,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "636:43:0",
+                    "src": "646:44:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -407,7 +407,7 @@
                   },
                   "id": 28,
                   "nodeType": "EmitStatement",
-                  "src": "631:48:0"
+                  "src": "641:49:0"
                 }
               ]
             },
@@ -426,14 +426,14 @@
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
                   "referencedDeclaration": 242,
-                  "src": "606:18:0",
+                  "src": "616:18:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "606:18:0"
+                "src": "616:18:0"
               }
             ],
             "name": "writeHash",
@@ -445,10 +445,10 @@
                 {
                   "constant": false,
                   "id": 14,
-                  "name": "_eventID",
+                  "name": "_eventSig",
                   "nodeType": "VariableDeclaration",
                   "scope": 30,
-                  "src": "563:15:0",
+                  "src": "572:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -459,7 +459,7 @@
                     "id": 13,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "563:6:0",
+                    "src": "572:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -474,7 +474,7 @@
                   "name": "_ipfsHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 30,
-                  "src": "580:17:0",
+                  "src": "590:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -485,7 +485,7 @@
                     "id": 15,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "580:7:0",
+                    "src": "590:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -495,16 +495,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "562:36:0"
+              "src": "571:37:0"
             },
             "returnParameters": {
               "id": 20,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "625:0:0"
+              "src": "635:0:0"
             },
             "scope": 67,
-            "src": "544:140:0",
+            "src": "553:142:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -513,7 +513,7 @@
             "body": {
               "id": 43,
               "nodeType": "Block",
-              "src": "790:43:0",
+              "src": "801:43:0",
               "statements": [
                 {
                   "expression": {
@@ -526,7 +526,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 32,
-                        "src": "820:7:0",
+                        "src": "831:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -547,7 +547,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 342,
-                        "src": "796:5:0",
+                        "src": "807:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_IpfsHashRecord_$67",
                           "typeString": "contract super IpfsHashRecord"
@@ -561,7 +561,7 @@
                       "memberName": "addWhitelistAdmin",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 267,
-                      "src": "796:23:0",
+                      "src": "807:23:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -575,7 +575,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "796:32:0",
+                    "src": "807:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -583,7 +583,7 @@
                   },
                   "id": 42,
                   "nodeType": "ExpressionStatement",
-                  "src": "796:32:0"
+                  "src": "807:32:0"
                 }
               ]
             },
@@ -602,14 +602,14 @@
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
                   "referencedDeclaration": 242,
-                  "src": "771:18:0",
+                  "src": "782:18:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "771:18:0"
+                "src": "782:18:0"
               }
             ],
             "name": "addWhitelistAdmin",
@@ -624,7 +624,7 @@
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "scope": 44,
-                  "src": "747:15:0",
+                  "src": "758:15:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -635,7 +635,7 @@
                     "id": 31,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "747:7:0",
+                    "src": "758:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -646,16 +646,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "746:17:0"
+              "src": "757:17:0"
             },
             "returnParameters": {
               "id": 36,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "790:0:0"
+              "src": "801:0:0"
             },
             "scope": 67,
-            "src": "720:113:0",
+            "src": "731:113:0",
             "stateMutability": "nonpayable",
             "superFunction": 267,
             "visibility": "public"
@@ -664,7 +664,7 @@
             "body": {
               "id": 52,
               "nodeType": "Block",
-              "src": "915:41:0",
+              "src": "926:41:0",
               "statements": [
                 {
                   "expression": {
@@ -679,7 +679,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 342,
-                        "src": "921:5:0",
+                        "src": "932:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_IpfsHashRecord_$67",
                           "typeString": "contract super IpfsHashRecord"
@@ -693,7 +693,7 @@
                       "memberName": "renounceWhitelistAdmin",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 276,
-                      "src": "921:28:0",
+                      "src": "932:28:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                         "typeString": "function ()"
@@ -707,7 +707,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "921:30:0",
+                    "src": "932:30:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -715,7 +715,7 @@
                   },
                   "id": 51,
                   "nodeType": "ExpressionStatement",
-                  "src": "921:30:0"
+                  "src": "932:30:0"
                 }
               ]
             },
@@ -730,16 +730,16 @@
               "id": 45,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "905:2:0"
+              "src": "916:2:0"
             },
             "returnParameters": {
               "id": 46,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "915:0:0"
+              "src": "926:0:0"
             },
             "scope": 67,
-            "src": "874:82:0",
+            "src": "885:82:0",
             "stateMutability": "nonpayable",
             "superFunction": 276,
             "visibility": "public"
@@ -748,7 +748,7 @@
             "body": {
               "id": 65,
               "nodeType": "Block",
-              "src": "1090:49:0",
+              "src": "1101:49:0",
               "statements": [
                 {
                   "expression": {
@@ -761,7 +761,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 55,
-                        "src": "1126:7:0",
+                        "src": "1137:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -782,7 +782,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 342,
-                        "src": "1103:5:0",
+                        "src": "1114:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_IpfsHashRecord_$67",
                           "typeString": "contract super IpfsHashRecord"
@@ -796,7 +796,7 @@
                       "memberName": "isWhitelistAdmin",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 255,
-                      "src": "1103:22:0",
+                      "src": "1114:22:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
@@ -810,7 +810,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1103:31:0",
+                    "src": "1114:31:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -819,7 +819,7 @@
                   "functionReturnParameters": 59,
                   "id": 64,
                   "nodeType": "Return",
-                  "src": "1096:38:0"
+                  "src": "1107:38:0"
                 }
               ]
             },
@@ -840,7 +840,7 @@
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "scope": 66,
-                  "src": "1046:15:0",
+                  "src": "1057:15:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -851,7 +851,7 @@
                     "id": 54,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1046:7:0",
+                    "src": "1057:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -862,7 +862,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1045:17:0"
+              "src": "1056:17:0"
             },
             "returnParameters": {
               "id": 59,
@@ -874,7 +874,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 66,
-                  "src": "1084:4:0",
+                  "src": "1095:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -885,7 +885,7 @@
                     "id": 57,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1084:4:0",
+                    "src": "1095:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -895,20 +895,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1083:6:0"
+              "src": "1094:6:0"
             },
             "scope": 67,
-            "src": "1020:119:0",
+            "src": "1031:119:0",
             "stateMutability": "view",
             "superFunction": 255,
             "visibility": "public"
           }
         ],
         "scope": 68,
-        "src": "199:942:0"
+        "src": "199:953:0"
       }
     ],
-    "src": "0:1142:0"
+    "src": "0:1153:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/takayuki.tamura/Documents/github/ipfs-contracts/contracts/IpfsHashRecord.sol",
@@ -990,10 +990,10 @@
                   "constant": false,
                   "id": 6,
                   "indexed": true,
-                  "name": "eventID",
+                  "name": "eventSig",
                   "nodeType": "VariableDeclaration",
                   "scope": 12,
-                  "src": "427:22:0",
+                  "src": "435:23:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1004,7 +1004,7 @@
                     "id": 5,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "427:6:0",
+                    "src": "435:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -1020,7 +1020,7 @@
                   "name": "createdAt",
                   "nodeType": "VariableDeclaration",
                   "scope": 12,
-                  "src": "451:25:0",
+                  "src": "460:25:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1031,7 +1031,7 @@
                     "id": 7,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "451:7:0",
+                    "src": "460:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1047,7 +1047,7 @@
                   "name": "ipfsHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 12,
-                  "src": "478:16:0",
+                  "src": "487:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1058,7 +1058,7 @@
                     "id": 9,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "478:7:0",
+                    "src": "487:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1068,15 +1068,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "426:69:0"
+              "src": "434:70:0"
             },
-            "src": "411:85:0"
+            "src": "419:86:0"
           },
           {
             "body": {
               "id": 29,
               "nodeType": "Block",
-              "src": "625:59:0",
+              "src": "635:60:0",
               "statements": [
                 {
                   "eventCall": {
@@ -1085,11 +1085,11 @@
                       {
                         "argumentTypes": null,
                         "id": 22,
-                        "name": "_eventID",
+                        "name": "_eventSig",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 14,
-                        "src": "645:8:0",
+                        "src": "655:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
                           "typeString": "bytes4"
@@ -1105,7 +1105,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 326,
-                            "src": "663:3:0",
+                            "src": "674:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1125,7 +1125,7 @@
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "655:7:0",
+                          "src": "666:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint256_$",
                             "typeString": "type(uint256)"
@@ -1140,7 +1140,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "655:12:0",
+                        "src": "666:12:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1153,7 +1153,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 16,
-                        "src": "669:9:0",
+                        "src": "680:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1180,7 +1180,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "636:8:0",
+                      "src": "646:8:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bytes4_$_t_uint256_$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes4,uint256,bytes32)"
@@ -1194,7 +1194,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "636:43:0",
+                    "src": "646:44:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1202,7 +1202,7 @@
                   },
                   "id": 28,
                   "nodeType": "EmitStatement",
-                  "src": "631:48:0"
+                  "src": "641:49:0"
                 }
               ]
             },
@@ -1221,14 +1221,14 @@
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
                   "referencedDeclaration": 242,
-                  "src": "606:18:0",
+                  "src": "616:18:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "606:18:0"
+                "src": "616:18:0"
               }
             ],
             "name": "writeHash",
@@ -1240,10 +1240,10 @@
                 {
                   "constant": false,
                   "id": 14,
-                  "name": "_eventID",
+                  "name": "_eventSig",
                   "nodeType": "VariableDeclaration",
                   "scope": 30,
-                  "src": "563:15:0",
+                  "src": "572:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1254,7 +1254,7 @@
                     "id": 13,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "563:6:0",
+                    "src": "572:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -1269,7 +1269,7 @@
                   "name": "_ipfsHash",
                   "nodeType": "VariableDeclaration",
                   "scope": 30,
-                  "src": "580:17:0",
+                  "src": "590:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1280,7 +1280,7 @@
                     "id": 15,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "580:7:0",
+                    "src": "590:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1290,16 +1290,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "562:36:0"
+              "src": "571:37:0"
             },
             "returnParameters": {
               "id": 20,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "625:0:0"
+              "src": "635:0:0"
             },
             "scope": 67,
-            "src": "544:140:0",
+            "src": "553:142:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1308,7 +1308,7 @@
             "body": {
               "id": 43,
               "nodeType": "Block",
-              "src": "790:43:0",
+              "src": "801:43:0",
               "statements": [
                 {
                   "expression": {
@@ -1321,7 +1321,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 32,
-                        "src": "820:7:0",
+                        "src": "831:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1342,7 +1342,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 342,
-                        "src": "796:5:0",
+                        "src": "807:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_IpfsHashRecord_$67",
                           "typeString": "contract super IpfsHashRecord"
@@ -1356,7 +1356,7 @@
                       "memberName": "addWhitelistAdmin",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 267,
-                      "src": "796:23:0",
+                      "src": "807:23:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -1370,7 +1370,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "796:32:0",
+                    "src": "807:32:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1378,7 +1378,7 @@
                   },
                   "id": 42,
                   "nodeType": "ExpressionStatement",
-                  "src": "796:32:0"
+                  "src": "807:32:0"
                 }
               ]
             },
@@ -1397,14 +1397,14 @@
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
                   "referencedDeclaration": 242,
-                  "src": "771:18:0",
+                  "src": "782:18:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "771:18:0"
+                "src": "782:18:0"
               }
             ],
             "name": "addWhitelistAdmin",
@@ -1419,7 +1419,7 @@
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "scope": 44,
-                  "src": "747:15:0",
+                  "src": "758:15:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1430,7 +1430,7 @@
                     "id": 31,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "747:7:0",
+                    "src": "758:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1441,16 +1441,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "746:17:0"
+              "src": "757:17:0"
             },
             "returnParameters": {
               "id": 36,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "790:0:0"
+              "src": "801:0:0"
             },
             "scope": 67,
-            "src": "720:113:0",
+            "src": "731:113:0",
             "stateMutability": "nonpayable",
             "superFunction": 267,
             "visibility": "public"
@@ -1459,7 +1459,7 @@
             "body": {
               "id": 52,
               "nodeType": "Block",
-              "src": "915:41:0",
+              "src": "926:41:0",
               "statements": [
                 {
                   "expression": {
@@ -1474,7 +1474,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 342,
-                        "src": "921:5:0",
+                        "src": "932:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_IpfsHashRecord_$67",
                           "typeString": "contract super IpfsHashRecord"
@@ -1488,7 +1488,7 @@
                       "memberName": "renounceWhitelistAdmin",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 276,
-                      "src": "921:28:0",
+                      "src": "932:28:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                         "typeString": "function ()"
@@ -1502,7 +1502,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "921:30:0",
+                    "src": "932:30:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1510,7 +1510,7 @@
                   },
                   "id": 51,
                   "nodeType": "ExpressionStatement",
-                  "src": "921:30:0"
+                  "src": "932:30:0"
                 }
               ]
             },
@@ -1525,16 +1525,16 @@
               "id": 45,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "905:2:0"
+              "src": "916:2:0"
             },
             "returnParameters": {
               "id": 46,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "915:0:0"
+              "src": "926:0:0"
             },
             "scope": 67,
-            "src": "874:82:0",
+            "src": "885:82:0",
             "stateMutability": "nonpayable",
             "superFunction": 276,
             "visibility": "public"
@@ -1543,7 +1543,7 @@
             "body": {
               "id": 65,
               "nodeType": "Block",
-              "src": "1090:49:0",
+              "src": "1101:49:0",
               "statements": [
                 {
                   "expression": {
@@ -1556,7 +1556,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 55,
-                        "src": "1126:7:0",
+                        "src": "1137:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1577,7 +1577,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 342,
-                        "src": "1103:5:0",
+                        "src": "1114:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_IpfsHashRecord_$67",
                           "typeString": "contract super IpfsHashRecord"
@@ -1591,7 +1591,7 @@
                       "memberName": "isWhitelistAdmin",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 255,
-                      "src": "1103:22:0",
+                      "src": "1114:22:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
@@ -1605,7 +1605,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1103:31:0",
+                    "src": "1114:31:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1614,7 +1614,7 @@
                   "functionReturnParameters": 59,
                   "id": 64,
                   "nodeType": "Return",
-                  "src": "1096:38:0"
+                  "src": "1107:38:0"
                 }
               ]
             },
@@ -1635,7 +1635,7 @@
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "scope": 66,
-                  "src": "1046:15:0",
+                  "src": "1057:15:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1646,7 +1646,7 @@
                     "id": 54,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1046:7:0",
+                    "src": "1057:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1657,7 +1657,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1045:17:0"
+              "src": "1056:17:0"
             },
             "returnParameters": {
               "id": 59,
@@ -1669,7 +1669,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 66,
-                  "src": "1084:4:0",
+                  "src": "1095:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1680,7 +1680,7 @@
                     "id": 57,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1084:4:0",
+                    "src": "1095:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1690,20 +1690,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1083:6:0"
+              "src": "1094:6:0"
             },
             "scope": 67,
-            "src": "1020:119:0",
+            "src": "1031:119:0",
             "stateMutability": "view",
             "superFunction": 255,
             "visibility": "public"
           }
         ],
         "scope": 68,
-        "src": "199:942:0"
+        "src": "199:953:0"
       }
     ],
-    "src": "0:1142:0"
+    "src": "0:1153:0"
   },
   "compiler": {
     "name": "solc",
@@ -1713,97 +1713,12 @@
     "3": {
       "events": {},
       "links": {},
-      "address": "0x6155b7A596a10fb816737115a553Eb410409B591",
-      "transactionHash": "0xee521900082f6a0d7ee0ceaefc6d7a305fb074848a5a4ba554aae47b5ca025e2"
-    },
-    "123": {
-      "events": {
-        "0x9a4f461c6520f5a47690beffb5daa947fcd25f5953e2f17de7ceb112f51f00f8": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "name": "eventID",
-              "type": "uint256"
-            },
-            {
-              "indexed": true,
-              "name": "createdAt",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "name": "ipfsHash",
-              "type": "bytes32"
-            }
-          ],
-          "name": "Recorded",
-          "type": "event",
-          "signature": "0x9a4f461c6520f5a47690beffb5daa947fcd25f5953e2f17de7ceb112f51f00f8"
-        },
-        "0x22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd20961299": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "name": "account",
-              "type": "address"
-            }
-          ],
-          "name": "WhitelistAdminAdded",
-          "type": "event",
-          "signature": "0x22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd20961299"
-        },
-        "0x0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e165": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "name": "account",
-              "type": "address"
-            }
-          ],
-          "name": "WhitelistAdminRemoved",
-          "type": "event",
-          "signature": "0x0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e165"
-        },
-        "0xcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "name": "eventID",
-              "type": "bytes4"
-            },
-            {
-              "indexed": true,
-              "name": "createdAt",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "name": "ipfsHash",
-              "type": "bytes32"
-            }
-          ],
-          "name": "Recorded",
-          "type": "event",
-          "signature": "0xcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c"
-        }
-      },
-      "links": {},
-      "address": "0x374c60723Bb30b94CeeEcE2A3A0D087d40cf88e5",
-      "transactionHash": "0x3c087494c1d2687920c6e2ea3522239dd0c26e4fe81533a63da4d3103720ef30"
-    },
-    "1010": {
-      "events": {},
-      "links": {},
-      "address": "0x3DB32D8EFd8157b610503A7674038Af1C953D9b4",
-      "transactionHash": "0x2e339e27487d68ca46f4a8c15d157b532a05d519d3a5fcdb13994c7a94650a42"
+      "address": "0xD5E5E89F207007f7DE068f5234A4EfC560Ddedb9",
+      "transactionHash": "0xb300fe1d8e0c7e7a80f76623406ced248bca057b1d0bb7a80aaafb24ff76d8fd"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-26T00:53:29.970Z",
+  "updatedAt": "2019-10-01T01:07:05.796Z",
   "devdoc": {
     "details": "Record IPFS hash to Ethereum contract by emitting log.",
     "methods": {

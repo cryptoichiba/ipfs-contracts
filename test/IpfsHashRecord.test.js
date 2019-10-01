@@ -14,7 +14,7 @@ contract("IpfsHashRecord test", async accounts => {
   it("should write ipfs hash by admin", async () => {
     const instance = await IpfsHashRecord.deployed();
     const { logs } = await instance.writeHash(EVENT_ID, IPFS_HASH, {from: accounts[0]});
-    assert.equal(logs[0].args.eventID.substr(0,10), EVENT_ID);
+    assert.equal(logs[0].args.eventSig.substr(0,10), EVENT_ID);
     assert.equal(logs[0].args.ipfsHash, IPFS_HASH);
   });
 

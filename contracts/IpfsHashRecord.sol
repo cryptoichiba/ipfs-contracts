@@ -8,17 +8,17 @@ import 'openzeppelin-solidity/contracts/access/roles/WhitelistAdminRole.sol';
  */
 contract IpfsHashRecord is WhitelistAdminRole {
 
-  // eventID is the first 4 bytes of the Keccak hash of events
+  // eventSig is the first 4 bytes of the Keccak256 hash of event name
   // auction_bidding: 0x636fe49e
   // auction_receipt: 0x4997644b
   // bancor_trading: 0x285a30e1
-  event Recorded (bytes4 indexed eventID, uint256 indexed createdAt, bytes32 ipfsHash);
+  event Recorded (bytes4 indexed eventSig, uint256 indexed createdAt, bytes32 ipfsHash);
 
   /**
    * @dev Write ipfsHash as log
    */
-  function writeHash(bytes4 _eventID, bytes32 _ipfsHash) public onlyWhitelistAdmin {
-    emit Recorded(_eventID, uint256(now), _ipfsHash);
+  function writeHash(bytes4 _eventSig, bytes32 _ipfsHash) public onlyWhitelistAdmin {
+    emit Recorded(_eventSig, uint256(now), _ipfsHash);
   }
 
   /**
