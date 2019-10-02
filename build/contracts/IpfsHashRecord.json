@@ -1711,14 +1711,64 @@
   },
   "networks": {
     "3": {
-      "events": {},
+      "events": {
+        "0xcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "eventSig",
+              "type": "bytes4"
+            },
+            {
+              "indexed": true,
+              "name": "createdAt",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "ipfsHash",
+              "type": "bytes32"
+            }
+          ],
+          "name": "Recorded",
+          "type": "event",
+          "signature": "0xcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c"
+        },
+        "0x22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd20961299": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "WhitelistAdminAdded",
+          "type": "event",
+          "signature": "0x22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd20961299"
+        },
+        "0x0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e165": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "WhitelistAdminRemoved",
+          "type": "event",
+          "signature": "0x0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e165"
+        }
+      },
       "links": {},
-      "address": "0xD5E5E89F207007f7DE068f5234A4EfC560Ddedb9",
-      "transactionHash": "0xb300fe1d8e0c7e7a80f76623406ced248bca057b1d0bb7a80aaafb24ff76d8fd"
+      "address": "0x7c827867E77DF950577e7Eb74551C872C12a376C",
+      "transactionHash": "0x3d196c561d70f97be9accc4fa79d02dbbd2532e85e8d9f08cfa6c8b06e4f97af"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-01T01:07:05.796Z",
+  "updatedAt": "2019-10-02T04:10:31.413Z",
   "devdoc": {
     "details": "Record IPFS hash to Ethereum contract by emitting log.",
     "methods": {
