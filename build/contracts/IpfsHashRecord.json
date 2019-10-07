@@ -1710,6 +1710,12 @@
     "version": "0.5.1+commit.c8a2cb62.Emscripten.clang"
   },
   "networks": {
+    "1": {
+      "events": {},
+      "links": {},
+      "address": "0x6c937A11B6AEf6be54C8da72474bE9A8AdD1ac6C",
+      "transactionHash": "0xfc7dd196044912f57867e3bf32126f5818e348946bcaaee772fc627309de6ed9"
+    },
     "3": {
       "events": {
         "0xcce1e83193e72316b7ae3946d6b86b2c9a7f16dd6bf064fa2f9321cd6bd3224c": {
@@ -1768,7 +1774,7 @@
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-10-02T04:10:31.413Z",
+  "updatedAt": "2019-10-07T04:06:32.492Z",
   "devdoc": {
     "details": "Record IPFS hash to Ethereum contract by emitting log.",
     "methods": {
