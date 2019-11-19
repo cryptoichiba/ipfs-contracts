@@ -20,6 +20,7 @@
   "bugs": {
     "url": "https://github.com/cryptoichiba/ipfs-contracts/issues"
   },
+  "license": "Apache License Version 2.0",
   "homepage": "https://github.com/cryptoichiba/ipfs-contracts#readme",
   "dependencies": {
     "ethereumjs-wallet": "^0.6.3",

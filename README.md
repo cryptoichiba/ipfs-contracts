@@ -42,3 +42,6 @@ npm test
 
 ### ログだけの場合
 `2632` gas
+
+# License
+[Apache License Version 2.0](https://github.com/cryptoichiba/ipfs-contracts/blob/master/LICENCE)
