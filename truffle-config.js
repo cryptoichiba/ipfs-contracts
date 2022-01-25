@@ -50,13 +50,6 @@ module.exports = {
      gas: 7000000,
     },
 
-    staging: {
-      network_id: 1010,
-      gas: 7000000,
-      provider: provider,
-      from: address
-    },
-
     // Another network with more advanced options...
     // advanced: {
       // port: 8777,             // Custom port
@@ -69,25 +62,27 @@ module.exports = {
 
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    ropsten: {
+    polygon_testnet: {
       provider: provider,
-      network_id: 3,       // Ropsten's id
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
-      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+      network_id: 80001,
+      gas: 5500000,           // Gas limit used for deploys (default: 6721975)
+      confirmations: 2,       // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,     // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true,       // Skip dry run before migrations? (default: false for public nets )
+      chainId: 80001
     },
 
-    mainnet: {
+    polygon_mainnet: {
       provider: provider,
-      network_id: 1,       // Ropsten's id
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
-      gasPrice: 30000000000, // 30 gwai
-      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    },
-
+      network_id: 137,
+      gas: 5500000,           // Gas limit used for deploys (default: 6721975)
+      gasPrice: 50000000000,  // Gas price used for deploys. (default: 20000000000 (20 Gwei))
+      confirmations: 2,       // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,     // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true,       // Skip dry run before migrations? (default: false for public nets )
+      chainId: 137
+    }
+  },
     // Useful for private networks
     // private: {
       // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
