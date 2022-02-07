@@ -5,7 +5,7 @@ Record IPFS hash to Ethereum contract
 | Name | Version |
 | ------------- | ------------- |
 | node  | 10.15.3  |
-| npm  | 6.9.0  |
+| yarn  | 1.22.10  |
 
 ## Getting start
 Export environment configurations
@@ -15,22 +15,22 @@ export ETH_NODE_URL='http://xxx.xxx.xxx.xxx:8545'
 ```
 Install dependencies
 ```
-npm install
+yarn
 ```
 
 Compile
 ```
-npm run compile
+yarn run compile
 ```
 
 Deploy
 ```
-npm run ganache-cli:start & npm run migrate:dev
+yarn run ganache-cli:start & npm run migrate:dev
 ```
 
 Test
 ```
-npm test
+yarn test
 ```
 
 ## ガスコスト比較
