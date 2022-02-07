@@ -19,7 +19,7 @@
  */
 
 const ethwallet = require('ethereumjs-wallet');
-const HDWalletProvider = require("truffle-hdwallet-provider");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 const wallet = ethwallet.fromPrivateKey(Buffer.from(process.env.ETH_DEPLOYER_KEY_IPFS, 'hex'));
 const address = "0x" + wallet.getAddress().toString("hex");

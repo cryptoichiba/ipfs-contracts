@@ -1874,10 +1874,17 @@
       "links": {},
       "address": "0x7c827867E77DF950577e7Eb74551C872C12a376C",
       "transactionHash": "0x3d196c561d70f97be9accc4fa79d02dbbd2532e85e8d9f08cfa6c8b06e4f97af"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x78bDaf04B6EFe77BdB9fD2CB4d51759EFd1e06Ec",
+      "transactionHash": "0xecdcec6c36def5f60eac9899229e2550f3810933b96d7b2b214ddc4bfe537278"
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-02-07T07:25:00.379Z",
+  "updatedAt": "2022-02-07T07:43:55.637Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "Record IPFS hash to Ethereum contract by emitting log.",
     "methods": {
